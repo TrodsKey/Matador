@@ -16,14 +16,15 @@ import java.util.Arrays;
  */
 public class Matador {
 
-    private DiceCup cup;
+    public DiceCup cup;
     private FieldInterface testFelt;
     public static FieldInterface[] fields = new FieldInterface[40];
     public Scanner scan = new Scanner(System.in);
     public Player player1;
     public Player player2;
-    private boolean gameWon = false;
+    public static boolean gameWon = false;
     private int fieldAmount = 39;
+    private final int START_MONEY = 2000;
 
     /**
      * @param args the command line arguments
@@ -124,6 +125,7 @@ public class Matador {
         player2 = new Player("Jacob", fields[0]);
         System.out.println(player1.toString());
         System.out.println(player2.toString());
+        //fields[30].consequence(player1);
     }
 
     public void rollPlayer1() {
@@ -133,7 +135,7 @@ public class Matador {
         if (newField > fieldAmount) {
             newField = newField - fieldAmount;
             System.out.println("You past the Start point");
-            player1.setMoney(2000);
+            player1.setMoney(START_MONEY);
             player1.setRounds(1);
             //gameWon = true;
         }
@@ -149,7 +151,7 @@ public class Matador {
         if (newField > fieldAmount) {
             newField = newField - fieldAmount;
             System.out.println("You past the Start point");
-            player2.setMoney(2000);
+            player2.setMoney(START_MONEY);
             player2.setRounds(1);
             //gameWon = true;
         }

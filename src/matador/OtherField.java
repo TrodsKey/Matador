@@ -38,7 +38,7 @@ public class OtherField implements FieldInterface {
 
     @Override
     public void consequence(Player player) {
-        System.out.println("You have have landed on chance");
+        System.out.println(player.getName() + " have have landed on chance");
        /* Random ranGen = new Random();
 
         int ranNum = ranGen.nextInt(4);

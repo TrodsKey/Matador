@@ -13,6 +13,7 @@ public class GoToJailField implements FieldInterface {
 
     private String name;
     private int number;
+    private final FieldInterface jailField = Matador.fields[10]; 
 
     public GoToJailField(String name, int number) {
         this.name = name;
@@ -32,6 +33,7 @@ public class GoToJailField implements FieldInterface {
     @Override
     public void consequence(Player player) {
         player.inJail = true;
+        player.movePlayer(jailField);
     }
     @Override
     public String toString() {

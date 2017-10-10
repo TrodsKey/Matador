@@ -36,7 +36,7 @@ public class ShipField extends OwnableField {
             System.out.println(super.getOwner().getName() + " already owns this field.");
         }
         else {
-            System.out.println(player.getName() + " can't afford " + player.getName() + ".");
+            System.out.println(player.getName() + " can't afford " + super.getName() + ".");
         }
     }
     

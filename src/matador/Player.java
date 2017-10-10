@@ -52,18 +52,26 @@ public class Player {
     public Player(String name, FieldInterface currentField) {
         this.name = name;
         this.currentField = currentField;
-        this.money = 20000;
+        this.money = 10000;
     }
 
     public int getField(int numberOfMoves) {
         this.setLatestMove(numberOfMoves);
         int newField;
+        int numberOfTries = 3;
         if (inJail) {
-            if (numberOfMoves == 7) {
+            
+            if (latestMove == 7) {
                 inJail = false;
+                System.out.println(this.getName() + " er ude af fængsel");
                 return newField = this.currentField.getNumber() + numberOfMoves;
-            } else {
-                System.out.println("Du er i fængsel");
+                
+            }/* else if (numberOfTries>0)
+            {
+                numberOfTries --;
+                Matador.cup.throwCup();
+            }*/else {
+                System.out.println(this.getName() + " er i fængsel");
                 return newField = this.currentField.getNumber();
             }
         } else {
@@ -81,11 +89,11 @@ public class Player {
 
     @Override
     public String toString() {
-        return "Player{" + "name=" + name + ", currentField=" + currentField + ", rounds played=" + rounds + "money=" + money +  '}';
+        return "Player{" + "name=" + name + ", currentField=" + currentField + ", rounds played= " + rounds + " money=" + money +  '}';
     }
 
-    public int move(DiceCup cup) {
+    /*public int move(DiceCup cup) {
         //this.currentField = cup;
         return 0;
-    }
+    }*/
 }
