@@ -1,0 +1,40 @@
+﻿Start,
+Rødovrevej,500
+Prøv lykken,
+Hvidovrevej,600
+Indkomstskat,
+Øresund A/S,
+Roskildevej,800
+?,
+Valby Langgade,1000
+Allégade,1200
+Fængsel,
+Frederiksberg Allé,1400
+Tuborg,
+Büllowsvej,1500
+Gl. Kongevej,1600
+D.F.D.S A/S,
+Bernstorffsvej,1800
+?,
+Hellerupvej,2000
+Strandvejen,2200
+Parkering,
+Trianglen,2400
+?,
+Østerbrogade,2500
+Grønningen,2600
+Ø.K. A/S,
+Bredgade,2800
+Kgs Nytorv,3000
+Carlsberg,
+Østergade,3200
+Gå i Fængsel!,
+Amagertorv,3400
+Vimmelskaftet,3500
+?,
+Nygade,3600
+D/S Bornholm 1866,
+?,
+Frederiksberg Allé,4200
+Statsskat,
+Rådhuspladsen,4600

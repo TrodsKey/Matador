@@ -20,7 +20,7 @@ public class OtherField implements FieldInterface {
         this.name = name;
         this.number = number;
     }
-    
+
     @Override
     public String getName() {
         return this.name;
@@ -30,7 +30,7 @@ public class OtherField implements FieldInterface {
     public int getNumber() {
         return this.number;
     }
-    
+
     @Override
     public String toString() {
         return "Du står på felt nr " + number + ": " + name;
@@ -38,8 +38,12 @@ public class OtherField implements FieldInterface {
 
     @Override
     public void consequence(Player player) {
-        System.out.println(player.getName() + " have have landed on chance");
-       /* Random ranGen = new Random();
+        if (this.getNumber() == 10) {
+            System.out.println(player.getName() + " is on the jailfield");
+        } else {
+            System.out.println(player.getName() + " have have landed on an otherField");
+        }
+        /* Random ranGen = new Random();
 
         int ranNum = ranGen.nextInt(4);
         switch (ranNum) {

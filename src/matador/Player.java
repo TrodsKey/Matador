@@ -33,7 +33,7 @@ public class Player {
     }
 
     public void addShips() {
-        this.ownedShips ++;
+        this.ownedShips++;
     }
     public boolean inJail = false;
 
@@ -60,23 +60,21 @@ public class Player {
         int newField;
         int numberOfTries = 3;
         if (inJail) {
-            
-            if (latestMove == 7) {
-                inJail = false;
-                System.out.println(this.getName() + " er ude af fængsel");
-                return newField = this.currentField.getNumber() + numberOfMoves;
-                
-            }/* else if (numberOfTries>0)
-            {
-                numberOfTries --;
-                Matador.cup.throwCup();
-            }*/else {
-                System.out.println(this.getName() + " er i fængsel");
-                return newField = this.currentField.getNumber();
+            while (numberOfTries > 0 && inJail) {
+                numberOfTries--;
+                if (latestMove == 7) {
+                    inJail = false;
+                    System.out.println(this.getName() + " er ude af fængsel");
+                    return newField = this.currentField.getNumber() + numberOfMoves;
+                }
+                latestMove = Matador.cup.throwCup();
+                System.out.println(this.getName() + " er i fængsel og rullede " + latestMove + " på forsøg nr." + numberOfTries);
             }
-        } else {
+            return newField = this.currentField.getNumber();
+        }else {
             return newField = this.currentField.getNumber() + numberOfMoves;
         }
+        //return newField = this.currentField.getNumber() + numberOfMoves;
     }
 
     public String getName() {
@@ -89,7 +87,7 @@ public class Player {
 
     @Override
     public String toString() {
-        return "Player{" + "name=" + name + ", currentField=" + currentField + ", rounds played= " + rounds + " money=" + money +  '}';
+        return "Player{" + "name=" + name + ", currentField=" + currentField + ", rounds played= " + rounds + " money=" + money + '}';
     }
 
     /*public int move(DiceCup cup) {
